@@ -15,7 +15,7 @@
 function Vector(x, y){
 	this.x = x;
 	this.y = y;
-	this.length = x + y
+	this.length = Math.sqrt(x*x + y*y)
 }
 
 Vector.prototype.test = "I am a Vector" 
