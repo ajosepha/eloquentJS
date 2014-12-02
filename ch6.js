@@ -6,9 +6,8 @@
 
 // // Your code here.
 
-// console.log(new Vector(1, 2).plus(new Vector(2, 3)));
-// // → Vector{x: 3, y: 5}
-// console.log(new Vector(1, 2).minus(new Vector(2, 3)));
+
+
 // // → Vector{x: -1, y: -1}
 // console.log(new Vector(3, 4).length);
 // → 5
@@ -16,7 +15,23 @@
 function Vector(x, y){
 	this.x = x;
 	this.y = y;
+	this.length = x + y
 }
 
-var myVector = new Vector(1, 2);
-console.log(myVector);
+Vector.prototype.test = "I am a Vector" 
+
+Vector.prototype.plus = function(second){
+	return new Vector(this.x + second.x, this.y + second.y)
+}
+
+Vector.prototype.minus = function(second){
+	return new Vector(this.x - second.x, this.y - second.y)
+}
+
+// Vector.prototype.length = function(){
+// 	return this.x + this.y;
+// }
+
+console.log(new Vector(1, 2).plus(new Vector(2, 3)));
+console.log(new Vector(1, 2).minus(new Vector(2, 3)));
+console.log(new Vector(3, 4).length);
